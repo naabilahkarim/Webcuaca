@@ -381,7 +381,22 @@ iframe {
     }
 
     .card {
+        width: calc(33.33% - 1rem);
+        margin-bottom: 1rem;
+    }
+}
 
+/* Large Devices (Desktops, 992px and up) */
+@media (min-width: 992px) {
+    .header-content h1 {
+        font-size: 3rem;
+    }
 
+    .header-content p {
+        font-size: 1.5rem;
+    }
 
-
+    .card {
+        width: calc(25% - 1rem);
+    }
+}
