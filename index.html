@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Cek Cuaca</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="peta.html">Peta</a></li>
+            <li><a href="informasi.html">Informasi</a></li>
+            <li><a href="berita.html">Berita</a></li>
+            <li><a href="tentang.html">Tentang</a></li>
+        </ul>
+    </nav>
+    <header>
+        <div class="header-content">
+            <h1 id="header-text"></h1>
+            <p>Temukan informasi terbaru tentang cuaca di kota Anda!</p>
+        </div>
+        <button id="cta"><a href="#weather-form-search">Cek Sekarang</a></button>
+    </header>   
+    <main>
+        <section id="section-1" class="section info-section">
+            <div class="info-section">
+                <h2>Apa saja yang ada di halaman ini?</h2>
+                <div class="info-cards">
+                    <div class="card" onclick="window.location.href='#weather-form-search'">
+                        <h3>Cek Cuaca</h3>
+                        <p>Dapatkan informasi cuaca terkini di berbagai kota dengan cepat dan mudah.</p>
+                    </div>
+                    <div class="card" onclick="window.location.href='peta.html'">
+                        <h3>Peta cuaca</h3>
+                        <p>Peta interaktif yang menampilkan informasi cuaca terkini di berbagai kota</p>
+                    </div>
+                    <div class="card" onclick="window.location.href='informasi.html'">
+                        <h3>Artikel Tentang Cuaca</h3>
+                        <p>Baca artikel informatif tentang cuaca, tips menghadapi musim, dan banyak lagi.</p>
+                    </div>
+                    <div class="card" onclick="window.location.href='berita.html'">
+                        <h3>Berita Terbaru Tentang Cuaca</h3>
+                        <p>Tonton video berita terbaru terkait kondisi cuaca di berbagai daerah.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section-2" class="section search-section">
+            <div class="weather-form">
+                <h2>Cek Cuaca di Kotamu Sekarang!</h2>
+                <form id="weather-form-search">
+                    <input type="text" id="city-input" placeholder="Masukkan nama kota" required>
+                    <button type="submit">Cari</button>
+                </form>
+            </div>
+            <div id="weather-result" style="display: none;">
+                <p id="city-name"></p>
+                <p id="temperature"></p>
+                <p id="weather"></p>
+                <p id="wind-speed"></p>
+            </div>
+        </section>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
