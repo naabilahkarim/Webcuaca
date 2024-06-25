@@ -18,12 +18,12 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Ensures items stay in a row */
+    overflow-x: auto; /* Allows horizontal scrolling if necessary */
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0 0.5rem;
 }
 
 nav ul li a {
@@ -36,7 +36,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #3981d4;
+    background-color: #f2f5f7;
 }
 
 header {
@@ -52,18 +52,16 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0;
-    animation: fadeIn 1.5s ease forwards;
 }
 
 .header-content h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0;
     text-align: center;
 }
 
 .header-content p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -101,8 +99,6 @@ header {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
-    transform: scale(0);
-    animation: zoomInButton 1s ease forwards;
 }
 
 #weather-form-search button:hover {
@@ -113,7 +109,6 @@ header {
 main {
     padding: 2rem;
     max-width: 1200px;
-    transition: opacity 0.5s ease;
     margin: 0 auto;
 }
 
@@ -143,10 +138,9 @@ main {
 
 .info-cards {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
 }
 
 .card {
@@ -154,13 +148,11 @@ main {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 1;
+    flex: 1 1 calc(25% - 1rem);
+    max-width: calc(25% - 1rem);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    margin-bottom: 1rem;
-    min-width: 280px;
-    max-width: 300px;
 }
 
 .card:hover {
@@ -198,6 +190,16 @@ main {
     color: white;
 }
 
+/* Animation */
+@keyframes expand {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 .section {
     animation: expand 0.5s ease-in-out;
 }
@@ -232,7 +234,6 @@ header button {
     color: inherit;
     background-color: rgb(44, 104, 215);
     border: none;
-    box-shadow: #333, 20px;
     padding: 15px 32px;
 }
 
@@ -269,124 +270,27 @@ iframe {
     text-align: center;
 }
 
-/* Animation */
-@keyframes expand {
-    from {
-        transform: scale(0.8);
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: nowrap; /* Ensures items stay in a row */
+        overflow-x: auto; /* Allows horizontal scrolling if necessary */
     }
-    to {
-        transform: scale(1);
-    }
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideInNav {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes zoomInButton {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
-.hide-content {
-    opacity: 0;
-}
-
-/* Small Devices (Mobile Phones, 600px and down) */
-@media (max-width: 600px) {
     .header-content h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     .header-content p {
-        font-size: 0.9rem;
-    }
-
-    .info-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .card h3 {
-        font-size: 1.2rem;
-    }
-
-    .card p {
-        font-size: 0.9rem;
-    }
-
-    nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    nav ul li {
-        margin: 0.5rem;
-        flex: 1 1 auto;
-        text-align: center;
-    }
-
-    .info-cards {
-        flex-direction: column;
+        font-size: 1rem;
     }
 
     .card {
-        width: 100%;
-    }
-
-    #weather-form-search input, #weather-form-search button {
-        width: 100%;
+        flex: 1 1 100%; /* Takes full width on small screens */
         max-width: 100%;
     }
 }
 
-/* Medium Devices (Tablets, 768px and up) */
-@media (min-width: 768px) {
-    nav ul {
-        flex-direction: row;
-    }
-
-    nav ul li {
-        margin: 0 1rem;
-    }
-
-    .header-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .header-content p {
-        font-size: 1.2rem;
-    }
-
-    .info-cards {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .card {
-        width: calc(33.33% - 1rem);
-        margin-bottom: 1rem;
-    }
-}
-
-/* Large Devices (Desktops, 992px and up) */
 @media (min-width: 992px) {
     .header-content h1 {
         font-size: 3rem;
