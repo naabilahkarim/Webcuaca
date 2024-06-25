@@ -1,6 +1,4 @@
 /* General Styles */
-
-
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -20,10 +18,14 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-100%);
+    animation: slideInNav 1s ease forwards;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0.5rem 0;
 }
 
 nav ul li a {
@@ -36,7 +38,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #f2f5f7;
+    background-color: #3981d4;
 }
 
 header {
@@ -52,18 +54,19 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
 }
 
 .header-content h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 0;
     text-align: center;
 }
 
 .header-content p {
-    font-size: 500;
+    font-size: 1rem;
     text-align: center;
-    position: center;
 }
 
 #weather-form {
@@ -100,6 +103,8 @@ header {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
+    transform: scale(0);
+    animation: zoomInButton 1s ease forwards;
 }
 
 #weather-form-search button:hover {
@@ -121,9 +126,7 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    
 }
-
 
 .search-section {
     /* Gaya untuk bagian pencarian */
@@ -143,11 +146,9 @@ main {
 
 .info-cards {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 1rem;
 }
-
-
 
 .card {
     background-color: #428be4;
@@ -158,6 +159,7 @@ main {
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 .card:hover {
@@ -172,8 +174,6 @@ main {
     color: white;
     margin-bottom: 1rem;
 }
-
-
 
 .card p {
     font-size: 1rem;
@@ -197,20 +197,9 @@ main {
     color: white;
 }
 
-/* Animation */
-@keyframes expand {
-    from {
-        transform: scale(0.8);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
 .section {
     animation: expand 0.5s ease-in-out;
 }
-
 
 /* Styles for Information and Berita pages */
 .content {
@@ -238,7 +227,6 @@ main {
 }
 
 header button {
-    
     font-family: 'Poppins';
     border-radius: 50px;
     color: inherit;
@@ -246,20 +234,18 @@ header button {
     border: none;
     box-shadow: #333, 20px;
     padding: 15px 32px;
-    
-    
 }
 
 header button:hover {
     background-color: #13355a;
     transition: 0.8s;
-    
 }
 
 header button a {
     color: white;
     text-decoration: none;
 }
+
 .content article p {
     font-size: 1rem;
     color: #555;
@@ -279,88 +265,18 @@ iframe {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-}
-
-nav {
-    background-color: #428be4;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
 .copyright p {
     text-align: center;
 }
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 1rem;
-    display: block;
-    transition: background-color 0.3s;
-}
 
-nav ul li a:hover {
-    background-color: #3981d4;
-}
-
-main {
-    padding: 2rem;
-}
-
-.content {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.content h1 {
-    text-align: center;
-    color: #007bff;
-    margin-bottom: 2rem;
-}
-
-.articles {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.article {
-    background-color: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-}
-
-.article:hover {
-    background-color: #007bff;
-    color: #fff;
-    transform: scale(1.05);
-}
-
-.header-content {
-    opacity: 0;
-    animation: fadeIn 1.5s ease forwards;
+/* Animation */
+@keyframes expand {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 @keyframes fadeIn {
@@ -372,12 +288,6 @@ main {
     }
 }
 
-
-nav ul {
-    transform: translateX(-100%);
-    animation: slideInNav 1s ease forwards;
-}
-
 @keyframes slideInNav {
     from {
         transform: translateX(-100%);
@@ -385,11 +295,6 @@ nav ul {
     to {
         transform: translateX(0);
     }
-}
-
-button {
-    transform: scale(0);
-    animation: zoomInButton 1s ease forwards;
 }
 
 @keyframes zoomInButton {
@@ -401,90 +306,19 @@ button {
     }
 }
 
-
 .hide-content {
     opacity: 0;
 }
 
-/* General Styles for All Devices */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-}
-
-/* Mobile First Approach */
-nav {
-    background-color: #428be4;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 1rem;
-    display: block;
-    transition: background-color 0.3s;
-}
-
-.header-content h1 {
-    font-size: 2rem;
-}
-
-.header-content p {
-    font-size: 1rem;
-}
-
-.info-cards {
-    flex-direction: column;
-}
-
-.card {
-    margin-bottom: 1rem;
-}
-
 /* Medium Devices (Tablets, 768px and up) */
 @media (min-width: 768px) {
-   nav {
-    background-color: #428be4;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+    nav ul {
+        flex-direction: row;
+    }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 1rem;
-    display: block;
-    transition: background-color 0.3s;
-}
+    nav ul li {
+        margin: 0 1rem;
+    }
 
     .header-content h1 {
         font-size: 2.5rem;
@@ -496,6 +330,7 @@ nav ul li a {
 
     .info-cards {
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .card {
@@ -516,24 +351,4 @@ nav ul li a {
     .info-cards {
         justify-content: space-between;
     }
-}
-
-/* Flexbox Adjustments */
-.info-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-@media (min-width: 768px) {
-    .info-cards {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-}
-
-.card {
-    flex: 1;
-    min-width: 200px;
-    margin: 1rem;
 }
