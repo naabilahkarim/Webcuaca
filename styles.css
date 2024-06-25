@@ -18,12 +18,10 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap; /* Ensures items stay in a row */
-    overflow-x: auto; /* Allows horizontal scrolling if necessary */
 }
 
 nav ul li {
-    margin: 0 0.5rem;
+    margin: 0 1rem;
 }
 
 nav ul li a {
@@ -36,7 +34,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #f2f5f7;
+    background-color: #3981d4;
 }
 
 header {
@@ -52,6 +50,8 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
 }
 
 .header-content h1 {
@@ -63,6 +63,15 @@ header {
 .header-content p {
     font-size: 1.5rem;
     text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #weather-form {
@@ -121,15 +130,6 @@ main {
     text-align: center;
 }
 
-.search-section {
-    background-color: #428be4;
-    color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    font-size: large;
-}
-
 .info-section h2 {
     font-size: 2rem;
     color: rgb(70, 134, 251);
@@ -138,7 +138,7 @@ main {
 
 .info-cards {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
 }
@@ -148,11 +148,12 @@ main {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(25% - 1rem); /* Mengatur lebar card di layar besar */
-    max-width: calc(25% - 1rem);
+    flex: 1 1 calc(30% - 1rem); /* Lebar card di desktop */
+    max-width: calc(30% - 1rem);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    margin-bottom: 1rem; /* Jarak antar card */
 }
 
 .card:hover {
@@ -173,135 +174,20 @@ main {
     color: white;
 }
 
-#weather-result {
-    display: none;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-#weather-result h2 {
-    font-size: 1.5rem;
-    color: #007bff;
-    margin-bottom: 1rem;
-}
-
-#weather-result p {
-    font-size: 1rem;
-    color: white;
-}
-
-/* Animation */
-@keyframes expand {
-    from {
-        transform: scale(0.8);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
-.section {
-    animation: expand 0.5s ease-in-out;
-}
-
-.content {
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 2rem 0;
-}
-
-.content h1 {
-    text-align: center;
-    color: #007bff;
-    margin-bottom: 2rem;
-}
-
-.content article {
-    padding: 1rem 0;
-}
-
-.content article h2 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-header button {
-    font-family: 'Poppins';
-    border-radius: 50px;
-    color: inherit;
-    background-color: rgb(44, 104, 215);
-    border: none;
-    padding: 15px 32px;
-}
-
-header button:hover {
-    background-color: #13355a;
-    transition: 0.8s;
-}
-
-header button a {
-    color: white;
-    text-decoration: none;
-}
-
-.content article p {
-    font-size: 1rem;
-    color: #555;
-}
-
-.video-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-iframe {
-    max-width: 100%;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.copyright p {
-    text-align: center;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    nav ul {
-        flex-wrap: nowrap; /* Ensures items stay in a row */
-        overflow-x: auto; /* Allows horizontal scrolling if necessary */
-    }
-
-    .header-content h1 {
-        font-size: 2rem;
-    }
-
-    .header-content p {
-        font-size: 1rem;
+@media (max-width: 992px) {
+    .info-cards {
+        justify-content: center;
     }
 
     .card {
-        flex-basis: calc(50% - 1rem); /* Mengatur lebar card menjadi setengah dari lebar parent dengan jarak margin 1rem */
+        flex: 1 1 calc(50% - 1rem); /* Lebar card di tablet */
         max-width: calc(50% - 1rem);
-        margin: 0.5rem; /* Memberikan margin kecil di sekeliling card */
     }
 }
 
-@media (min-width: 992px) {
-    .header-content h1 {
-        font-size: 3rem;
-    }
-
-    .header-content p {
-        font-size: 1.5rem;
-    }
-
+@media (max-width: 768px) {
     .card {
-        width: calc(25% - 1rem);
+        flex: 1 1 100%; /* Lebar card di mobile */
+        max-width: 100%;
     }
 }
