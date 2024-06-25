@@ -18,14 +18,11 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    transform: translateX(-100%);
-    animation: slideInNav 1s ease forwards;
+    flex-direction: row;
 }
 
 nav ul li {
-    margin: 0.5rem 0;
+    margin: 0 1rem;
 }
 
 nav ul li a {
@@ -129,11 +126,10 @@ main {
 }
 
 .search-section {
-    /* Gaya untuk bagian pencarian */
-    background-color: #428be4; /* Warna latar belakang biru */
-    color: white; /* Warna teks putih */
-    padding: 20px; /* Ruang di sekitar konten */
-    border-radius: 5px; /* Sudut melengkung */
+    background-color: #428be4;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
     text-align: center;
     font-size: large;
 }
@@ -201,7 +197,6 @@ main {
     animation: expand 0.5s ease-in-out;
 }
 
-/* Styles for Information and Berita pages */
 .content {
     padding: 2rem;
     background-color: #fff;
@@ -308,6 +303,50 @@ iframe {
 
 .hide-content {
     opacity: 0;
+}
+
+/* Small Devices (Mobile Phones, 600px and down) */
+@media (max-width: 600px) {
+    .header-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-content p {
+        font-size: 0.9rem;
+    }
+
+    .info-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .info-cards {
+        flex-direction: column;
+    }
+    
+    .card {
+        width: 100%;
+    }
+
+    #weather-form-search input, #weather-form-search button {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 /* Medium Devices (Tablets, 768px and up) */
