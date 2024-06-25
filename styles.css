@@ -482,3 +482,23 @@ nav ul li {
         justify-content: space-between;
     }
 }
+
+/* Flexbox Adjustments */
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .info-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.card {
+    flex: 1;
+    min-width: 200px;
+    margin: 1rem;
+}
