@@ -148,7 +148,7 @@ main {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(25% - 1rem);
+    flex: 1 1 calc(25% - 1rem); /* Mengatur lebar card di layar besar */
     max-width: calc(25% - 1rem);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -286,8 +286,9 @@ iframe {
     }
 
     .card {
-        flex: 1 1 100%; /* Takes full width on small screens */
-        max-width: 100%;
+        flex-basis: calc(50% - 1rem); /* Mengatur lebar card menjadi setengah dari lebar parent dengan jarak margin 1rem */
+        max-width: calc(50% - 1rem);
+        margin: 0.5rem; /* Memberikan margin kecil di sekeliling card */
     }
 }
 
