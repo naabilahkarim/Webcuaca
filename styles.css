@@ -19,6 +19,7 @@ nav ul {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -142,8 +143,10 @@ main {
 
 .info-cards {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
 }
 
 .card {
@@ -156,6 +159,8 @@ main {
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
     margin-bottom: 1rem;
+    min-width: 280px;
+    max-width: 300px;
 }
 
 .card:hover {
@@ -173,7 +178,7 @@ main {
 
 .card p {
     font-size: 1rem;
-    color: white;   
+    color: white;
 }
 
 #weather-result {
@@ -328,17 +333,20 @@ iframe {
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     nav ul li {
-        margin: 0.5rem 0;
+        margin: 0.5rem;
+        flex: 1 1 auto;
+        text-align: center;
     }
 
     .info-cards {
         flex-direction: column;
     }
-    
+
     .card {
         width: 100%;
     }
@@ -373,21 +381,7 @@ iframe {
     }
 
     .card {
-        margin-bottom: 0;
-    }
-}
 
-/* Large Devices (Laptops/Desktops, 992px and up) */
-@media (min-width: 992px) {
-    .header-content h1 {
-        font-size: 3rem;
-    }
 
-    .header-content p {
-        font-size: 1.5rem;
-    }
 
-    .info-cards {
-        justify-content: space-between;
-    }
-}
+
