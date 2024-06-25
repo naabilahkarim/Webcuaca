@@ -406,3 +406,79 @@ button {
     opacity: 0;
 }
 
+/* General Styles for All Devices */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Mobile First Approach */
+nav ul {
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0.5rem 0;
+}
+
+.header-content h1 {
+    font-size: 2rem;
+}
+
+.header-content p {
+    font-size: 1rem;
+}
+
+.info-cards {
+    flex-direction: column;
+}
+
+.card {
+    margin-bottom: 1rem;
+}
+
+/* Medium Devices (Tablets, 768px and up) */
+@media (min-width: 768px) {
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-content p {
+        font-size: 1.2rem;
+    }
+
+    .info-cards {
+        flex-direction: row;
+    }
+
+    .card {
+        margin-bottom: 0;
+    }
+}
+
+/* Large Devices (Laptops/Desktops, 992px and up) */
+@media (min-width: 992px) {
+    .header-content h1 {
+        font-size: 3rem;
+    }
+
+    .header-content p {
+        font-size: 1.5rem;
+    }
+
+    .info-cards {
+        justify-content: space-between;
+    }
+}
